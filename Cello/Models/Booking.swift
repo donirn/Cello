@@ -8,13 +8,20 @@
 
 import Foundation
 
-struct Booking {
+protocol Booking {
+    var purpose: String {get}
+    var date: NSDate {get}
+    var description: String {get}
+}
+
+struct BookingAccepted: Booking{
     let purpose: String
     let date: NSDate
     let description: String
-    var status: BookingStatusType
-    
-    enum BookingStatusType {
-        case Requested, Accepted, Expired
-    }
+}
+
+struct BookingRequested: Booking{
+    let purpose: String
+    let date: NSDate
+    let description: String
 }

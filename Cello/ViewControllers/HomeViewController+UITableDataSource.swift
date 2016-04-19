@@ -9,19 +9,33 @@
 import UIKit
 
 extension HomeViewController: UITableViewDataSource{
+    private var Accepted_Section: Int{
+        get{
+            return 0
+        }
+    }
+    
     func numberOfSectionsInTableView(tableview: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return BookingCollection.sharedInstance.elements.count
+        if section == Accepted_Section{
+            return BookingCollection.sharedInstance.getNumberOfAccepted()
+        } else {
+            return BookingCollection.sharedInstance.getNumberOfRequests()
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
         let row = indexPath.row
-        cell.textLabel?.text = BookingCollection.sharedInstance.elements[row].purpose
+        if indexPath.section == Accepted_Section{
+            cell.textLabel?.text = BookingCollection.sharedInstance.accepted[row].purpose
+        } else{
+            cell.textLabel?.text = BookingCollection.sharedInstance.requested[row].purpose
+        }
         
         return cell
     }

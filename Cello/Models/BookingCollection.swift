@@ -11,9 +11,18 @@ import Foundation
 class BookingCollection: NSObject {
     static let sharedInstance = BookingCollection()
     
-    var elements:[Booking] = []
+    var accepted : [BookingAccepted] = []
+    var requested: [BookingRequested] = []
     
     private override init() {
         super.init()
+    }
+    
+    func getNumberOfRequests() -> Int {
+        return requested.count
+    }
+    
+    func getNumberOfAccepted() -> Int{
+        return accepted.count
     }
 }
