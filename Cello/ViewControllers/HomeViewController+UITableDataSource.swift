@@ -19,6 +19,14 @@ extension HomeViewController: UITableViewDataSource{
         return 2
     }
     
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == Accepted_Section{
+            return "Booked Translator"
+        } else {
+            return "Pending Request"
+        }
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == Accepted_Section{
             return BookingCollection.sharedInstance.getNumberOfAccepted()
