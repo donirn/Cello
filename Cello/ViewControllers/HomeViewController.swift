@@ -15,6 +15,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // dummy data
+        let booking = Booking(purpose: "waw", date: NSDate(), description: "yeah", status: .Requested)
+        BookingCollection.sharedInstance.elements = [booking]
     }
 
     override func didReceiveMemoryWarning() {
