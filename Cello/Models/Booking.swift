@@ -2,26 +2,20 @@
 //  Booking.swift
 //  Cello
 //
-//  Created by Doni Ramadhan on 19/04/16.
+//  Created by Doni Ramadhan on 20/04/16.
 //  Copyright © 2016 Cello. All rights reserved.
 //
-
 import Foundation
 
-protocol Booking {
-    var purpose: String {get}
-    var date: NSDate {get}
-    var description: String {get}
-}
-
-struct BookingAccepted: Booking{
+class Booking: NSObject {
     let purpose: String
-    let date: NSDate
-    let description: String
-}
-
-struct BookingRequested: Booking{
-    let purpose: String
-    let date: NSDate
-    let description: String
+    let requestDate: NSDate
+    let descriptionText: String
+    
+    init(purpose: String, requestDate: NSDate, descriptionText: String) {
+        self.purpose = purpose
+        self.requestDate = requestDate
+        self.descriptionText = descriptionText
+        super.init()
+    }
 }
