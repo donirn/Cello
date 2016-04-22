@@ -17,15 +17,15 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // dummy data
-        let booking1 = BookingAccepted(purpose: "1", requestDate: NSDate(), descriptionText: "yeah")
-        let booking2 = BookingAccepted(purpose: "2", requestDate: NSDate().dateByAddingMinutes(3), descriptionText: "yeah")
-        let booking3 = BookingAccepted(purpose: "3", requestDate: NSDate().dateByAddingHours(9).dateByAddingMinutes(1), descriptionText: "yeah")
+        let booking1 = BookingAccepted(purpose: "Doctor", requestDate: NSDate(), descriptionText: "yeah")
+        let booking2 = BookingAccepted(purpose: "Law", requestDate: NSDate().dateByAddingMinutes(3), descriptionText: "yeah")
+        let booking3 = BookingAccepted(purpose: "Migration Office", requestDate: NSDate().dateByAddingHours(9).dateByAddingMinutes(1), descriptionText: "yeah")
         BookingCollection.sharedInstance.accepted = [booking1,booking2,booking3]
         
         
-        let booking4 = BookingRequested(purpose: "4", requestDate: NSDate().dateByAddingHours(2).dateByAddingMinutes(6), descriptionText: "yeah")
-        let booking5 = BookingRequested(purpose: "5", requestDate: NSDate().dateByAddingDays(5), descriptionText: "yeah")
-        let booking6 = BookingRequested(purpose: "6", requestDate: NSDate().dateByAddingDays(6).dateByAddingHours(1), descriptionText: "yeah")
+        let booking4 = BookingRequested(purpose: "Police", requestDate: NSDate().dateByAddingHours(2).dateByAddingMinutes(6), descriptionText: "yeah")
+        let booking5 = BookingRequested(purpose: "Nurse", requestDate: NSDate().dateByAddingDays(5), descriptionText: "yeah")
+        let booking6 = BookingRequested(purpose: "Doctor", requestDate: NSDate().dateByAddingDays(6).dateByAddingHours(1), descriptionText: "yeah")
         BookingCollection.sharedInstance.requested = [booking4,booking5,booking6]
     }
 
