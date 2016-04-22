@@ -17,15 +17,9 @@ class DateFormatterUtils {
             let hours = Int(date.hoursUntil())
             let minutes = totalMinutes % 60
             var stringResult = ""
-            
             stringResult += addHoursString(hours)
-            
-            if hours > 0 && minutes > 0 {
-                stringResult += " and "
-            }
-            
+            stringResult += addAndString(hours, minutes: minutes)
             stringResult += addMinutesString(minutes)
-            
             stringResult += " more"
             return stringResult
         }
@@ -51,5 +45,12 @@ class DateFormatterUtils {
             }
         }
         return stringResult
+    }
+    
+    private static func addAndString(hours: Int, minutes: Int) -> String{
+        if hours > 0 && minutes > 0 {
+            return " and "
+        }
+        return ""
     }
 }
