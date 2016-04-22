@@ -20,11 +20,10 @@ class Booking: NSObject {
     }
     
     func getRequestDateString() -> String{
-        let daysUntil = requestDate.daysUntil()
-        if daysUntil > 0{
-            return requestDate.formattedDateWithFormat("EEE, dd MMM yyyy, HH:mm")
+        if requestDate.isToday(){
+            return "Today, " + requestDate.formattedDateWithFormat("HH:mm")
         } else {
-            return DateFormatterUtils.getHoursMinutesUntilString(requestDate)
+            return requestDate.formattedDateWithFormat("EEE, dd MMM yyyy, HH:mm")
         }
     }
 }
