@@ -1,0 +1,29 @@
+//
+//  Booking.swift
+//  Cello
+//
+//  Created by Doni Ramadhan on 20/04/16.
+//  Copyright © 2016 Cello. All rights reserved.
+//
+import Foundation
+
+class Booking: NSObject {
+    let purpose: String
+    let requestDate: NSDate
+    let descriptionText: String
+    
+    init(purpose: String, requestDate: NSDate, descriptionText: String) {
+        self.purpose = purpose
+        self.requestDate = requestDate
+        self.descriptionText = descriptionText
+        super.init()
+    }
+    
+    func getRequestDateString() -> String{
+        if requestDate.isToday(){
+            return "Today, " + requestDate.formattedDateWithFormat("HH:mm")
+        } else {
+            return requestDate.formattedDateWithFormat("EEE, dd MMM yyyy, HH:mm")
+        }
+    }
+}
