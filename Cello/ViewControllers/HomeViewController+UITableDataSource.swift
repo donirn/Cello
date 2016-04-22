@@ -40,9 +40,9 @@ extension HomeViewController: UITableViewDataSource{
         
         let row = indexPath.row
         if indexPath.section == Accepted_Section{
-            cell.textLabel?.text = BookingCollection.sharedInstance.accepted[row].purpose
+            cell.textLabel?.text = BookingCollection.sharedInstance.accepted[row].getRequestDateString()
         } else{
-            cell.textLabel?.text = BookingCollection.sharedInstance.requested[row].purpose
+            cell.textLabel?.text = BookingCollection.sharedInstance.requested[row].getRequestDateString()
         }
         
         return cell
