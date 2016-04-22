@@ -18,28 +18,35 @@ class DateFormatterUtils {
             let minutes = totalMinutes % 60
             var stringResult = ""
             
-            stringResult += addHours(hours)
+            stringResult += addHoursString(hours)
             
             if hours > 0 && minutes > 0 {
                 stringResult += " and "
             }
             
-            if minutes > 0{
-                stringResult += "\(minutes) minute"
-                if minutes > 1{
-                    stringResult += "s"
-                }
-            }
+            stringResult += addMinutesString(minutes)
+            
             stringResult += " more"
             return stringResult
         }
     }
     
-    private static func addHours(hours: Int) -> String{
+    private static func addHoursString(hours: Int) -> String{
         var stringResult = ""
         if hours > 0{
             stringResult += "\(hours) hour"
             if hours > 1{
+                stringResult += "s"
+            }
+        }
+        return stringResult
+    }
+    
+    private static func addMinutesString(minutes: Int) -> String{
+        var stringResult = ""
+        if minutes > 0{
+            stringResult += "\(minutes) minute"
+            if minutes > 1{
                 stringResult += "s"
             }
         }
