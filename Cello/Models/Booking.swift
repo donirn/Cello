@@ -24,34 +24,7 @@ class Booking: NSObject {
         if daysUntil > 0{
             return requestDate.formattedDateWithFormat("EEE, dd MMM yyyy, HH:mm")
         } else {
-            let totalMinutes = Int(requestDate.minutesUntil())
-            if totalMinutes > 0 {
-                let hours = Int(requestDate.hoursUntil())
-                let minutes = totalMinutes % 60
-                var stringResult = ""
-                
-                if hours > 0{
-                    stringResult += "\(hours) hour"
-                    if hours > 1{
-                        stringResult += "s"
-                    }
-                }
-                
-                if hours > 0 && minutes > 0 {
-                    stringResult += " and "
-                }
-                
-                if minutes > 0{
-                    stringResult += "\(minutes) minute"
-                    if minutes > 1{
-                        stringResult += "s"
-                    }
-                }
-                stringResult += " more"
-                return stringResult
-            } else {
-                return "now"
-            }
+            return DateFormatterUtils.getHoursMinutesUntilString(requestDate)
         }
     }
 }
