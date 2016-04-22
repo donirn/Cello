@@ -36,15 +36,22 @@ extension HomeViewController: UITableViewDataSource{
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        
-        let row = indexPath.row
-        if indexPath.section == Accepted_Section{
-            cell.textLabel?.text = BookingCollection.sharedInstance.accepted[row].getRequestDateString()
-        } else{
-            cell.textLabel?.text = BookingCollection.sharedInstance.requested[row].getRequestDateString()
+        if let cell = tableView.dequeueReusableCellWithIdentifier("BookingCell") as? BookingCell{
+            let row = indexPath.row
+            var booking: Booking
+            
+            if indexPath.section == Accepted_Section{
+                booking = BookingCollection.sharedInstance.accepted[row]
+            } else{
+                booking = BookingCollection.sharedInstance.requested[row]
+            }
+            
+            cell.purposeLabel.text = "Meeting with " + booking.purpose
+            cell.requestDateLabel.text = booking.getRequestDateString()
+            
+            return cell
         }
         
-        return cell
+        return UITableViewCell()
     }
 }

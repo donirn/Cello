@@ -18,9 +18,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="46n-kk-DBL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="46n-kk-DBL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookingCell" rowHeight="64" id="rct-zw-cQg" userLabel="Booking Cell" customClass="BookingCell" customModule="Cello" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rct-zw-cQg" id="PS4-oJ-Lfn">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Meeting with Doctor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2I-mN-slD" userLabel="Purpose Label">
+                                                    <rect key="frame" x="8" y="8" width="584" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="LH7-8p-HUQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tomorrow, 3:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dY1-O1-FkW" userLabel="Request Date Label">
+                                                    <rect key="frame" x="8" y="26" width="584" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="yzF-UJ-qWp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="dY1-O1-FkW" secondAttribute="trailing" id="9HB-Ss-e4W"/>
+                                                <constraint firstItem="g2I-mN-slD" firstAttribute="top" secondItem="PS4-oJ-Lfn" secondAttribute="topMargin" id="9ag-DK-zJR"/>
+                                                <constraint firstItem="dY1-O1-FkW" firstAttribute="leading" secondItem="PS4-oJ-Lfn" secondAttribute="leadingMargin" id="CNP-3E-1dU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="g2I-mN-slD" secondAttribute="trailing" id="TUB-Bo-iQ1"/>
+                                                <constraint firstItem="dY1-O1-FkW" firstAttribute="top" secondItem="g2I-mN-slD" secondAttribute="bottom" constant="2" id="eRo-4B-9ES"/>
+                                                <constraint firstItem="g2I-mN-slD" firstAttribute="leading" secondItem="PS4-oJ-Lfn" secondAttribute="leadingMargin" id="hjo-mh-BOq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="purposeLabel" destination="g2I-mN-slD" id="L0P-ad-NOD"/>
+                                            <outlet property="requestDateLabel" destination="dY1-O1-FkW" id="HUV-xz-0C8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="9zQ-Iw-7g9"/>
                                 </connections>
