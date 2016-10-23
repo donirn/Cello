@@ -16,4 +16,4 @@ Cello has 2 type of users: Customer and Translator. Below are the app flows for 
 3. Translator will be reminded at the appointed time to call the customer.
 <img src="Images/Translator%20Flow.png" width="500"/>
 
-###### This project is backed by bdimpact.com
+###### This project is backed by [BDImpact, a non-profit organization in Sweden](http://bdimpact.com)
